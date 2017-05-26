@@ -8,14 +8,23 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body class="menu-3">
 
-  <div class="menu">
+  <div class="header">
     <div class="logo">Analytics Unit</div>
-    <div class="nav">
-      <ul>
-        <li>
-          <span>Other Menus</span>
+    <div id="mobnav-btn">
+      <div class="mobnav-icon">
+        <i class="fa fa-bars"></i> Menu
+      </div>
+    </div>
+  </div>
+
+  <!-- start REGULAR CMS NAV -->
+  <div class="xnav">
+    <div class="xnav-wrapper">
+      <ul class="sf-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Other Menus</a>
           <ul class="sub_menu">
             <li><a href="index.html">Menu 1 - top, standard</a></li>
             <li><a href="menu2.html">Menu 2 - big menu</a></li>
@@ -23,62 +32,19 @@
             <li><a href="menu4.html">Menu 4 - side nav + big menu</a></li>
           </ul>
         </li>
-        <li>
-          <span>submenu</span>
-          <ul class="sub_menu">
-            <li>abcdefghijklmnopqrstuv this is a test where there are word breaks</li>
-            <li>
-              <span>subsubmenu</span>
-              <ul class="sub_sub_menu">
-                <li>abcdefghijklmnopqrstuv this is a test where there are word breaks</li>
-                <li>sub-item2</li>
-                <li>sub-item3</li>
-                <li>sub-item4</li>
-              </ul>
-            </li>
-            <li>sub-item3</li>
-            <li>sub-item4</li>
-          </ul>
-        </li>
-        <li>
-          <span>submenu</span>
-          <ul class="sub_menu">
-            <li>sub-item1</li>
-            <li>sub-item2</li>
-            <li>sub-item3</li>
-            <li>sub-item4</li>
-          </ul>
-        </li>
-        <li>
-          <span>submenu</span>
-          <ul class="sub_menu">
-            <li>sub-item1</li>
-            <li>sub-item2</li>
-            <li>sub-item3</li>
-            <li>sub-item4</li>
-          </ul>
-        </li>
-        <li>
-          <span>really really long submenu</span>
-          <ul class="sub_menu">
-            <li>sub-item1</li>
-            <li>sub-item2</li>
-            <li>sub-item3</li>
-            <li>sub-item4</li>
-          </ul>
-        </li>
-        <li>
-          <span>submenu</span>
-          <ul class="sub_menu">
-            <li>sub-item1</li>
-            <li>sub-item2</li>
-            <li>sub-item3</li>
-            <li>sub-item4</li>
-          </ul>
-        </li>
+        <li><a href="#">Doughnuts</a></li>
+        <li><a href="#">Icecream</a></li>
+        <li><a href="#">Banana Split</a> </li>
+        <li><a href="#">Brownies</a></li>
+        <li><a href="#">Lollipop</a></li>
+        <li><a href="#">Pixie Stix</a></li>
+        <li><a href="#">Bubble Gum</a></li>
+        <li><a href="#">Chocolate Chips</a></li>
+        <li><a href="#">Cherries</a></li>
       </ul>
     </div>
   </div>
+  <!-- end REGULAR CMS NAV -->
 
   <div class="content">
     <h1>H1: Lorem ipsum dolor sit amet</h1>
@@ -111,6 +77,21 @@
       <div class="picture" style="background-image:url('img/8.jpg')"></div>
     </div>
   </div>
+
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    //start MOBILE NAV
+    $('#mobnav-btn').click(
+      function() {
+        console.log("click");
+        $(".menu-3").toggleClass("mobile-menu-open");
+        $(".xnav-wrapper").delay(500).queue(function(reset_scroll) {
+          $(this).scrollTop(0);
+          reset_scroll();
+        });
+      });
+    //end MOBILE NAV
+  </script>
 </body>
 
 </html>
