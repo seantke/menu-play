@@ -1,0 +1,27 @@
+.content {
+  max-width: 1500px;
+  padding: 4rem;
+  background-color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top:60px;
+  p {
+    text-align: left;
+  }
+
+  .picture_area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .picture {
+      width: 50%;
+      min-width: 600px;
+      height: 600px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border: 10px solid white;
+    }
+  }
+}

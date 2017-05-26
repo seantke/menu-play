@@ -1,0 +1,80 @@
+.menu {
+  background-color: $blue;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  line-height: 1;
+  position:fixed;
+  top:0;
+  .logo {
+    font-size: 3rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .nav {
+    font-size: 2rem;
+    width: 1200px;
+    height: 100%;
+
+    ul {
+      text-decoration: none;
+
+      > li {
+        z-index: 1;
+      }
+
+      li {
+        display: inline-block;
+        position: relative;
+        padding: 2rem;
+
+        &:hover {
+          background-color: darken($blue, 20%);
+
+          .sub_menu {
+            display: inline-block;
+          }
+        }
+      }
+
+      .sub_menu {
+        display: none;
+        background-color: darken($blue, 10%);
+        position: absolute;
+        height: auto;
+        top: 100%;
+        left: 0;
+
+        li {
+          min-width: 200px;
+          width: 100%;
+          z-index: 200;
+
+          &:hover {
+            background-color: darken($blue, 20%);
+
+            .sub_sub_menu {
+              display: inline-block;
+            }
+          }
+        }
+
+        .sub_sub_menu {
+          display: none;
+          background-color: darken($blue, 10%);
+          position: absolute;
+          height: auto;
+          top: 0;
+          left: 100%;
+
+          li {
+            min-width: 200px;
+            width: 100%;
+            z-index: 200;
+          }
+        }
+      }
+    }
+  }
+}
